@@ -27,3 +27,5 @@ QtCreator: *Non-Qt Project → Plain C++ Application*, замінити вміс
 Або з консолі: `g++ main.cpp -o lab3 && ./lab3`
 
 ![Область 31](diagrams/oblast31.png)
+
+Репозиторій: https://github.com/tsonyshchuk-oss/lab_3
