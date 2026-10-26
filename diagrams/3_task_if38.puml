@@ -1,0 +1,23 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam activityBackgroundColor #F2F2F2
+partition "task_if38()" {
+start
+:Вивести "Введіть дійсне число x: ";
+:Ввести x з клавіатури;
+if () then ([введено коректне число])
+  if () then ([x < -2])
+    :r = (int)(x² - 4);
+  elseif () then ([x <= 2])
+    :r = (int) x;
+  else ([else])
+    :r = 4;
+  endif
+  :Вивести "r(x) = ", r;
+else ([else])
+  :Вивести "Помилка: потрібно
+  ввести число!";
+endif
+stop
+}
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam activityBackgroundColor #F2F2F2
+partition "task_geom31()" {
+start
+:Вивести "Введіть радіус кола r: ";
+:Ввести radius;
+if () then ([введено не число або radius <= 0])
+  :Вивести "Некоректні дані!
+  Радіус має бути додатним числом.";
+else ([else])
+  :Вивести "Введіть координати точки (x y): ";
+  :Ввести x, y;
+  if () then ([введено не числа])
+    :Вивести "Не числові дані!";
+  else ([else])
+    :xc = -radius, yc = 0
+    circle = (x - xc)² + (y - yc)²
+    R2 = radius²;
+    :inTriangle = (y >= 0) і (x <= -radius) і (y <= x + 2·radius);
+    :inSegment = (circle <= R2) і (y >= 0) і (x + y >= 0);
+    if () then ([inTriangle або inSegment])
+      :Вивести "Точка належить області 31.";
+    else ([else])
+      :Вивести "Точка НЕ належить області 31.";
+    endif
+  endif
+endif
+stop
+}
+@enduml

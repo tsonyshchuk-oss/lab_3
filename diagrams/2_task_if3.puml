@@ -1,0 +1,23 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam activityBackgroundColor #F2F2F2
+partition "task_if3()" {
+start
+:Вивести "Введіть ціле число: ";
+:Ввести number з клавіатури;
+if () then ([введено коректне ціле число])
+  if () then ([number > 0])
+    :number = number - 8;
+  elseif () then ([number < 0])
+    :number = number + 6;
+  else ([else])
+    :number = 10;
+  endif
+  :Вивести "Отримане число: ", number;
+else ([else])
+  :Вивести "Помилка: потрібно
+  ввести ціле число!";
+endif
+stop
+}
+@enduml

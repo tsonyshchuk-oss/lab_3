@@ -1,0 +1,28 @@
+@startuml
+skinparam defaultFontName DejaVu Sans
+skinparam activityBackgroundColor #F2F2F2
+partition "main()" {
+start
+:Встановити кодування консолі UTF-8;
+:Вивести меню завдань;
+:Вивести "Номер завдання: ";
+:Ввести menu;
+if () then ([введено не ціле число])
+  :Вивести "Помилка: номер завдання
+  має бути цілим числом!";
+else ([else])
+  switch ()
+  case ([menu = 1])
+    :Виклик task_if3();
+  case ([menu = 2])
+    :Виклик task_if38();
+  case ([menu = 3])
+    :Виклик task_geom31();
+  case ([else])
+    :Вивести "Невірний номер завдання!
+    (Тільки 1, 2, 3)";
+  endswitch
+endif
+stop
+}
+@enduml
